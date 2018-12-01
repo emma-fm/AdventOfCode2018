@@ -37,11 +37,9 @@ result = 0
 any_frequency_repeated = False
 repeated_frequency = 0
 old_frequencies = [0]
-loop = 0
 while (any_frequency_repeated == False):
     for n in number_array:
         result += n
-        loop = loop + 1
         if result in old_frequencies:
             repeated_frequency = result
             any_frequency_repeated = True

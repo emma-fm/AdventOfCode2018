@@ -12,11 +12,14 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 '''
-
+import EntryProcessor as ep
 # Same as day 1: get input and remove any unnecessary commas
-id_string = input(">Enter the list of IDs: ")
-ids = id_string.split()
-ids = [s.replace(",", "") for s in ids]
+id_string = input(">Enter the list of IDs, for challenge input type 'challenge': ")
+if id_string == "challenge":
+    ids = ep.EntryProcessor.getEntryArray(r"input/Day2.txt")
+else:
+    ids = id_string.split()
+    ids = [s.replace(",", "") for s in ids]
 
 # We get the number of times a letter is repeated 3 times, so we can discard
 # them when we count the times a letter is repeated twice.

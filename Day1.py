@@ -12,13 +12,16 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 '''
-
+import EntryProcessor as ep
 #Get input
-frq_changes = input("> Enter the frequency changes: ")
-string_array = frq_changes.split()
-
-#Removes unnecessary commas, if there's any
-string_array = [s.replace(",", "") for s in string_array]
+frq_changes = input("> Enter the frequency changes, or type 'challenge' for the challenge input: ")
+string_array = []
+if frq_changes == "challenge":
+    string_array = ep.EntryProcessor.getEntryArray(r"input/Day1.txt")
+else:
+    string_array = frq_changes.split()
+    #Removes unnecessary commas, if there's any
+    string_array = [s.replace(",", "") for s in string_array]
 
 #String to int
 number_array = []
